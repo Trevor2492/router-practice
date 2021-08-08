@@ -8,7 +8,7 @@ const Login = ({ user, setUser }) => {
         type="text"
         placeholder="Username"
         value={user}
-        onChange={(e) => setUser(e.target.value)}
+        onChange={(user) => setUser(user)}
       />
     </div>
   );

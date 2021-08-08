@@ -12,10 +12,14 @@ function App() {
     <Router>
       <div className="App">
         <Route
-          path="/login"
-          render={() => <Login user={user} setUser={setUser} />}
+          exact
+          path="/"
+          render={() => {
+            if (user) return <Main />;
+            return <Login user={user} setUser={setUser} />;
+          }}
         />
-        {user && <Route path="/main" render={() => <Main />} />}
+        <Route path="/main" render={() => <Main />} />
         <Route path="/other" render={() => <Other />} />
       </div>
     </Router>
